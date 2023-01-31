@@ -1,10 +1,26 @@
-import React from 'react';
+import { GlobalStyle } from "./styles/GlobalStyles";
+import Quote from "./components/Quote";
+import { FaTwitter } from "react-icons/fa";
 
 function App() {
+  const handleOnClickTwitter = () => {};
+
+  const handleOnClickQuote = () => {};
+
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-    </div>
+    <>
+      <GlobalStyle />
+        <Quote
+          quoteText={
+            "What you are is what you have been. What you'll be is what you do now Buddha"
+          }
+          quoteAuthor={"Buddha"}
+          onClickTwitter={handleOnClickTwitter}
+          iconTwitter={<FaTwitter />}
+          onClickQuote={handleOnClickQuote}
+          buttonText={"New Quote"}
+        />
+    </>
   );
 }
 
