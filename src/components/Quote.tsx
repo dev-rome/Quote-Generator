@@ -4,7 +4,6 @@ import { Quotes } from "../types/TypeQuote";
 const Quote = ({
   quoteText,
   quoteAuthor,
-  buttonText,
   iconTwitter,
   onClickTwitter,
   onClickQuote,
@@ -16,7 +15,7 @@ const Quote = ({
         <p>{quoteAuthor}</p>
         <ButtonContainer>
           <button onClick={onClickTwitter}>{iconTwitter}</button>
-          <button onClick={onClickQuote}>{buttonText}</button>
+          <button onClick={onClickQuote}>New Quote</button>
         </ButtonContainer>
       </QuoteWrapper>
     </QuoteContainer>
