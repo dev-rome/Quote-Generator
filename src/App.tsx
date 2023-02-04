@@ -1,41 +1,47 @@
 import { useState, useEffect } from "react";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import Quote from "./components/Quote";
-import { FaTwitter } from "react-icons/fa";
 
 function App() {
   const [quotes, setQuotes] = useState([]);
+  const [text, setText] = useState("");
+  const [author, setAuthor] = useState("");
+  const url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
 
   useEffect(() => {
-    const url = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
-    const getQuote = async () => {
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        console.log(data);
+    fetch(url)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Please check url");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        const quote = data[Math.floor(Math.random() * data.length)];
         setQuotes(data);
-      } catch (err) {
+        setText(quote["text"]);
+        setAuthor(quote["author"]);
+      })
+      .catch((err) => {
         console.log(err);
-      }
-    };
-    getQuote();
+      });
   }, []);
 
   const handleOnClickTwitter = () => {};
 
   const handleOnClickQuote = () => {
-    // const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    // console.log(quote);
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    setText(quote["text"]);
+    setAuthor(quote["author"]);
   };
 
   return (
     <>
       <GlobalStyle />
       <Quote
-        quoteText={"Hello"}
-        quoteAuthor={"Hello"}
+        quoteText={text}
+        quoteAuthor={author}
         onClickTwitter={handleOnClickTwitter}
-        iconTwitter={<FaTwitter />}
         onClickQuote={handleOnClickQuote}
       />
     </>
