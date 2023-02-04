@@ -27,7 +27,10 @@ function App() {
       });
   }, []);
 
-  const handleOnClickTwitter = () => {};
+  const handleOnClickTwitter = () => {
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${text} - ${author}`;
+    window.open(twitterUrl, "_blank");
+  };
 
   const handleOnClickQuote = () => {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
