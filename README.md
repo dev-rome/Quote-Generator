@@ -3,7 +3,7 @@ Welcome to the Quote Generator App! This app is built with React, TypeScript, an
 
 ## How to Use
 - Open the App: Launch the app by opening the index.html file in your web browser.
-- Generate a Quote: Click the "Generate Quote" button to get a random quote fetched from our API.
+- Generate a Quote: Click the button to get a random quote fetched from our API.
 
 ## Technical Details
 - Built with React: This app is developed using the React JavaScript library.
