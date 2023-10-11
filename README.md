@@ -1,5 +1,9 @@
 # Quote Generator App README
-Welcome to the Quote Generator App! This app is built with React, TypeScript, and Styled Components. It fetches inspirational quotes from an external API. It's easy to use, and here's how:
+Welcome to the Quote Generator App! This app is built with React, TypeScript, and Styled Components. It fetches inspirational quotes from an external API.
+
+## Screenshots
+![Screenshot 2023-10-10 221235](https://github.com/dev-rome/Quote-Generator/assets/84602714/385997ca-f940-4a6d-b0cd-40c6340922f7)
+
 
 ## How to Use
 - Open the App: Launch the app by opening the index.html file in your web browser.
